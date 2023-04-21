@@ -1,18 +1,30 @@
 # Getting Started with Create React App
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Application Deployed Link
+(https://tayo-three.vercel.app/)
 
-In the project directory, you can run:
+## Available Scripts to Run Application
 
-### `npm start`
+### Clone repo in your local Device
+First run the following command `git clone https://github.com/jharaghav32/Tayo.git` in terminal to clone the repo in your local device
 
-Runs the app in the development mode.\
+### Install Require Dependencies
+Run `npm install` to install the required dependencies to run the application
+
+### Run the Application in Development Mode
+
+Then Runs `npm start` to run the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
+
+### API Endpoint Used in Application
+World wide data of cases: (https://disease.sh/v3/covid-19/all). \
+Country Specific data of cases: (https://disease.sh/v3/covid-19/countries). \
+Graph data for cases with date:
+(https://disease.sh/v3/covid-19/historical/all?lastdays=all). \
 
 ### `npm test`
 
