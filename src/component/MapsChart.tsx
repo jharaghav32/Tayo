@@ -29,9 +29,11 @@ const markerIcon = new L.Icon({
 const center: [number, number] = [40.63463151377654, -97.89969605983609];
 
 const MapsChart: React.FC = () => {
+    //creating state to store data
   const [countries, setCountries] = useState<CountryData[]>([]);
 
   useEffect(() => {
+    //fetching data
     fetch("https://disease.sh/v3/covid-19/countries")
       .then((response) => response.json())
       .then((data) => setCountries(data));

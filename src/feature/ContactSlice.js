@@ -29,6 +29,7 @@ export const ContactSlice = createSlice({
  name:'contact',
  initialState,
  reducers:{
+    // logic to add contact
     addContact:(state,action)=>{
      const{firstname,lastname,status}=action.payload;
      const newcontact={
@@ -39,6 +40,7 @@ export const ContactSlice = createSlice({
      };
      state.unshift(newcontact);
     },
+    // to edit contact 
     editContact:(state,action)=>{
         const{firstname,lastname,status,id}=action.payload;
         for(let i=0;i<state.length;i++){
@@ -49,8 +51,10 @@ export const ContactSlice = createSlice({
             }
         }
     },
+    // to delete contact 
     deleteContact:(state,action)=>{
          return state.filter((item)=>{return item.id!==action.payload})
+         // testing state
          console.log(state)
     }
  }

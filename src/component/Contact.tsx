@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import {useAppSelector,useAppDispatch} from '../hook';
 import {addContact,deleteContact, editContact} from '../feature/ContactSlice.js'
-// import ContactList from './ContactList';
+
 const Contact = () => {
     const dispatch  = useAppDispatch();
+    // get redux state using useAppSelector
     const data = useAppSelector((e)=>{return e});
     const [showModal,setshowModal]=useState(false);
     const [contact,setcontact]=useState({firstname:"",lastname:"",status:"inactive"});
@@ -12,6 +13,7 @@ const Contact = () => {
     const [contactlist,setcontactlist]=useState(true);
     const[editId,seteditId]=useState();
     console.log(data)
+    // add new contact 
     const handleClick=()=>{
         setshowModal(false);
         setcontactlist(true);
@@ -21,6 +23,7 @@ const Contact = () => {
             "status":contact.status
         }))
     }
+    //It delete the contact 
     const handleDelete=(id:any)=>{
         dispatch(deleteContact(id))
     }
@@ -38,6 +41,8 @@ const Contact = () => {
    const handleSubmit=()=>{
     setshowEdit(false);
     setcontactlist(true);
+    //Send the payload to editContact in Redux to edit contact Info using
+    //dispatch function
     dispatch(editContact({
         "firstname":singcontact.firstname,
         "lastname":singcontact.lastname,
