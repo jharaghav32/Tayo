@@ -74,10 +74,10 @@ console.log(totalCases)
   }
 
   return (
-    <div className="flex flex-row">
-    <div className="flex flex-col justify-center bg-white py-4 text-center rounded-md mt-1 shadow-lg w-[500px] h-[90vh]">
-      <h1 className="text-3xl font-bold mb-4">Covid-19 Historical Data</h1>
-      <div className="flex flex-wrap gap-2 px-2  justify-center pb-4">
+    
+    <div className="flex flex-col justify-center items-center bg-white  text-center rounded-md  shadow-lg w-[80%] h-[85vh] py-4 my-8 ">
+      <div className="flex flex-wrap gap-2 px-2 my-4  justify-center pb-4">
+        
         <div className="shadow-md p-1">TotalCases :{totalCases?.cases}<span className="mx-2 text-red-500">+{totalCases?.todayCases}</span></div>
         <div className="shadow-md p-1">TotalDeaths :{totalCases?.deaths}<span className="mx-2 text-red-500">+{totalCases?.todayDeaths}</span></div>
         <div className="shadow-md p-1">TotalRecovered :{totalCases?.recovered}<span className="mx-2 text-green-500">+{totalCases?.todayRecovered}</span></div>
@@ -86,10 +86,8 @@ console.log(totalCases)
       </div>
       {data && Object.keys(data).length > 0 && <Line data={chartData}  />} 
     </div>
-    <div>
-        <MapsChart/>
-    </div>
-    </div>
+    
+    
   );
 };
 

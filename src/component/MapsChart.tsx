@@ -40,10 +40,12 @@ const MapsChart: React.FC = () => {
   }, []);
 
   return (
+    <div className='m-auto'>
+      <h1 className='  text-center text-white text-2xl bg-black p-2'>Covid-19 Cases </h1>
     <MapContainer
       center={center}
       zoom={3}
-      style={{ width: '700px', height: '90vh' }}
+      style={{ width: '86vw', height: '80vh' }}
     >
       <TileLayer
         url="https://api.maptiler.com/maps/basic/256/{z}/{x}/{y}.png?key=0QL0WFisiNjHiiDrl9it"
@@ -66,6 +68,7 @@ const MapsChart: React.FC = () => {
         </Marker>
       ))}
     </MapContainer>
+    </div>
   );
 }
 

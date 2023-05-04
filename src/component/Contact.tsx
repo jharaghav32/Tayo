@@ -74,12 +74,13 @@ const Contact = () => {
         setcontact({...contact,[e.target.name]:e.target.value})
     }
   return (
-    <div className='p-2 flex flex-col w-[100%] items-center '>
-        <button data-modal-target="defaultModal" data-modal-toggle="defaultModal" className='rounded-none h-10   bg-blue-500 p-1 justify-center' type='button' onClick={()=>{setshowModal(true);
+    <div className='p-2 flex flex-col w-[100%] items-center  '>
+        {/* <button data-modal-target="defaultModal" data-modal-toggle="defaultModal" className='rounded-none h-10   bg-blue-500 p-1 justify-center' type='button' onClick={()=>{setshowModal(true);
         setcontactlist(false);
          setshowEdit(false)}}
-         >Create Contact</button>
-     {showModal ? ( <div id='defaultModal' className='p-5 border-2 border-black m-2'>
+         >Create Contact</button> */}
+        
+     {showModal ? ( <div id='defaultModal'  className='p-5 border-2 border-black m-2 w-[100%'>
         
             <h1 className='text-center text-2xl mb-2'>Create Contact Screen</h1>
        
@@ -111,12 +112,13 @@ const Contact = () => {
                 <button data-modal-hide="defaultModal" className='bg-blue-500 py-2 px-4 my-2' onClick={handleClose} >Close</button>
             </div>
        </div>):null}
-<div className={`flex flex-col my-2  gap-1 border overflow-auto  h-[70%] w-[50%] ${contactlist || view || showEdit ?'':'hidden'} `}>
+<div className={`flex flex-col my-2  gap-1 border overflow-auto  h-[70%] w-[100%] ${contactlist || view || showEdit ?'':'hidden'} `}>
+{contactlist ? <h1 className='  text-center text-white text-2xl bg-black p-2'>Contact List </h1>:null}
    {
      contactlist &&  data.map((e:any,id:any)=>(
-        <div className='flex flex-row py-1 px-2 justify-between  gap-7 text-xl my-2 w-[100%] border-2 rounded-2xl border-black '>
+        <div className='flex flex-row py-1 px-2 justify-between items-center  gap-7 text-xl my-2 w-[100%] border-2 rounded-2xl border-black '>
             <div className='basis-1/2 '>{e.firstname} {e.lastname}</div>
-            <div className='flex gap-1  basis-1/2 justify-end '>
+            <div className='flex gap-1 flex-col sm:flex-row  basis-1/2 justify-end '>
             <button className='bg-green-400   rounded-full px-4 py-2  text-white' onClick={()=>{handleEdit(e.firstname,e.lastname,e.status,e.id)}}  >Edit</button>
             <button className='bg-red-500  rounded-full p-2 text-white' onClick={()=>
                handleDelete(e.id)   
@@ -167,6 +169,10 @@ const Contact = () => {
     </div>
    :null}
     </div>
+    <button data-modal-target="defaultModal" data-modal-toggle="defaultModal" className='rounded-none h-10   bg-blue-500 p-1 justify-center text-xl' type='button' onClick={()=>{setshowModal(true);
+        setcontactlist(false);
+         setshowEdit(false)}}
+         >Create Contact</button>
    </div>
   )
 }
